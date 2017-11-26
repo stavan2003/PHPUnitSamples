@@ -105,3 +105,23 @@ C:/xampp/htdocs/PHPUnitSamples/vendor/phpunit/phpunit/phpunit --configuration C:
         $this->assertEquals(11.00, $result);
     }
 ```
+
+#### Adding Data Providers to the test
+
+```php
+    public function provideTotalData() {
+        return [
+            'indexdataset#1'=> [[1,2,5,8],16],
+            'indexdataset#2'=> [[1,2,0,8],11]
+        ];
+    }
+
+    /** @test
+     * @dataProvider provideTotalData
+     */
+    public function testTotal($input, $expected) {
+        $coupon = null;
+        $output = $this->receipt->total($input, $coupon);
+        $this->assertEquals($expected, $output, "When sunmming total to be {$expected}");
+    }
+```
