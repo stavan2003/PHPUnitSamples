@@ -23,7 +23,7 @@ autoload.php is generated in the vendor folder [Autoloading allows us to use PHP
 ##### PSR-4 is the newest standard of autoloading in PHP, mandates us to use namespaces
   * Put the classes that we want to autoload in a dedicated directory.
   * Give the classes a namespace
-  * Point the namespace to the src/ directory in the composer.json file
+  * Point the namespace to the ```app/``` directory in the composer.json file
   * Update the Composer autoloader using
   ``` 
   $ composer dumpautoload -o
