@@ -34,7 +34,8 @@ Reference : [Site](http://phpenthusiast.com/blog/how-to-autoload-with-composer)
 * The attributes of the <phpunit> element can be used to configure PHPUnit's core functionality
 * Bootstrap the autoload.php in phpunit.xml
 * The <testsuites> element and its one or more <testsuite> children can be used to compose a test suite out of test suites and test cases. [PHPUnit Manual](https://phpunit.de/manual/current/en/appendixes.configuration.html)
-```
+
+```xml
 <testsuites>
   <testsuite name="My Test Suite">
     <directory>/path/to/*Test.php files</directory>
@@ -45,7 +46,8 @@ Reference : [Site](http://phpenthusiast.com/blog/how-to-autoload-with-composer)
 
 ```
 * For Code coverage add below code
-```
+
+```xml
    <filter>
       <whitelist processUncoveredFilesFromWhitelist="true">
          <directory suffix=".php">./app</directory>
@@ -68,7 +70,7 @@ C:/xampp/htdocs/PHPUnitSamples/vendor/phpunit/phpunit/phpunit --configuration C:
 ```
 
 #### Sample Stub [Reference : Lynda - Test-Driven Development in PHP with PHPUnit]
-```
+```php
     public function testPostTaxTotal() {
         $Receipt = $this->getMockBuilder('App\Receipt')
             ->setMethods(['tax', 'total'])
@@ -81,7 +83,7 @@ C:/xampp/htdocs/PHPUnitSamples/vendor/phpunit/phpunit/phpunit --configuration C:
 ```
 
 #### Sample Mock
-```
+```php
     //Mock has expectations as to which stub methods are called and the inputs to the stub methods
     public function testPostTaxTotalMock() {
         $items = [1,2,5,8];
